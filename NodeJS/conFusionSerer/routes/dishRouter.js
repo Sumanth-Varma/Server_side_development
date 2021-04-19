@@ -58,7 +58,7 @@ dishRouter.route('/:dishId')
 })
 .put((req,res,next) => {
     Dishes.findByIdAndUpdate(req.params.dishId, {
-        set: req.body
+        $set: req.body
     }, { new: true })
     .then((dish) => {
         res.statusCode = 200;
